@@ -1,5 +1,12 @@
 # Sensor_fusion_using_extended_kalman_filter
 An implementation of Extended Kalman Filter for fusion of lidar and radar sensor data for two different motion models.
+
+## Demo/Preview
+
+Graph of the estimated pose of the object using extended kalman filter
+![EKF_vs_Measuremnets_L__R](https://user-images.githubusercontent.com/115849836/203244954-043b3e6c-9eaf-4771-be9b-bbcc4925d22a.png)
+![EKF_vs_GT](https://user-images.githubusercontent.com/115849836/203244961-8a17fd28-3396-4267-8a12-7a074f5012bd.png)
+
 # INTRODUCTION
 This repository is an implementations of Kalman filter and extended Kalman filter (depeding on the linearatiy of the model) for the following different motion models using LIDAR and Radar measurement.
 
