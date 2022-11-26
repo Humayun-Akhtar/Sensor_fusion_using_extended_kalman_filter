@@ -1,8 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[94]:
-
 
 #**************Importing Required Libraries*************
 import pandas as pd
@@ -16,22 +11,9 @@ from scipy.stats import norm
 import math as math
 
 
-# In[95]:
-
-
-
-
-
-# In[420]:
-
-
 pd.set_option('display.max_columns', None)
 pd.set_option('display.max_rows', None)
 pd.set_option('display.max_colwidth', None)
-
-
-# In[421]:
-
 
 def cart_to_polar(x_pos,y_pos,vx,vy):
     r = np.sqrt(x_pos**2+y_pos**2)
@@ -77,80 +59,45 @@ def polar_2_cart(ro, phi, ro_dot):
 #Read Input File
 measurements = pd.read_csv('data.csv',header = None)
 
-
-# In[422]:
-
-
 measurements
 
-
-# In[98]:
-
-
 measurements_lidar = measurements[measurements[0] == 'L']
-
-
-# In[99]:
 
 
 measurements_radar = measurements[measurements[0] == 'R']
 
 
-# In[100]:
-
-
 columns_lidar = ['sensor','x_pos','y_pos','time','gt_x_pos','gt_y_pos','gt_vx','gt_vy','gt_yaw','gt_yaw_rate','blank']
-
-
-# In[101]:
 
 
 columns_radar = ['sensor','r','heading','r_dot','time','gt_x_pos','gt_y_pos','gt_vx','gt_vy','gt_yaw','gt_yaw_rate']
 
-
-# In[102]:
-
-
 measurements_radar.columns = columns_radar
-
-
-# In[103]:
-
 
 measurements_radar
 
-
-# In[104]:
-
-
 measurements_radar['gt_r'] = np.sqrt(measurements_radar['gt_x_pos']**2 + measurements_radar['gt_y_pos']**2)
-
-
-# In[105]:
-
 
 measurements_radar['gt_heading'] = np.arctan2(measurements_radar['gt_y_pos'],measurements_radar['gt_x_pos'])
 
 
-# In[106]:
 
 
 measurements_radar['gt_r_dot'] =(measurements_radar['gt_vx']*measurements_radar['gt_x_pos'] + measurements_radar['gt_vy']*measurements_radar['gt_y_pos'])/measurements_radar['gt_r']
 
 
-# In[474]:
 
 
 measurements_radar['x_measured'], measurements_radar['y_measured'], measurements_radar['v_measured'] = polar_2_cart(measurements_radar['r'],measurements_radar['heading'],measurements_radar['r_dot'])
 
 
-# In[475]:
+
 
 
 measurements_radar
 
 
-# In[109]:
+
 
 
 measurements_lidar.columns = columns_lidar
