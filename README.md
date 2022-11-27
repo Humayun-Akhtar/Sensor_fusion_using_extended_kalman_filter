@@ -57,7 +57,7 @@ The constant velocity process model is a process model where the object moves li
 
 
 # Computing the Covariance, State transition and Jacobian Matrix
-#### Finding Jacobian for all non-linear relations is well explained in the book- "Probabilistic Robotics". But the main idea remains is to write the given variables (such as the Z_distance, Z_heading, Z_rho_dot) in term of the state variables (here X,y,v,theta, theta_dot) using the given relation/Physics. Then use the basic differential calculus (differentiate each given measurement w.r.t. each variable) and obtain the Jacobian Matrix. A breif calculation of the required Jacobian is computed in both pdfs.
+#### Finding Jacobian for all non-linear relations is well explained in the book- "Probabilistic Robotics". But the main idea remains is to write the given variables (such as the Z_distance, Z_heading, Z_rho_dot) in term of the state variables (here X,y,v,theta, theta_dot) using the given relation/Physics. Then use the basic differential calculus (differentiate each given measurement w.r.t. each variable) and obtain the Jacobian Matrix. A breif calculation of the required Jacobian is shown in both pdfs.
 
 Two seperate documentation with handwritten notes to compute various matrices has been attached. Both prcoess models has been refereed:
 1. Constant Turn rate and velocity model (Pdf with name constant turn rate model)
